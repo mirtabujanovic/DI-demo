@@ -1,8 +1,8 @@
 package guru.springframework.didemo.services;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class SetterGreetingService implements GreetingService {
     @Override
     public String sayHello() {
