@@ -1,7 +1,8 @@
 package guru.springframework.didemo;
 
+import guru.springframework.didemo.controllers.ConstructorBasedController;
 import guru.springframework.didemo.controllers.MyController;
-import guru.springframework.didemo.services.GreetingServiceImpl;
+import guru.springframework.didemo.controllers.SetterBasedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -15,6 +16,9 @@ public class DiDemoApplication {
 		MyController c = (MyController) ctx.getBean("myController");
 		c.hello();
 
-		System.out.println(ctx.getBean(GreetingServiceImpl.class).sayHello());
+		//CONSTRUCTOR BASED
+		System.out.println(ctx.getBean(ConstructorBasedController.class).controllerSaysHello());
+		//SETTER BASED
+		System.out.println(ctx.getBean(SetterBasedController.class).sayHello());
 	}
 }
